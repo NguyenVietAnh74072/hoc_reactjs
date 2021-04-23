@@ -23,7 +23,8 @@ app.get('/TaiKhoanNguoiDung/:TaiKhoan/:MatKhau', async (req,res)=>{ //Đăng nh�
 		var MatKhau = req.params.MatKhau; // req.body lấy dữ liệu từ client về server
 		const newTodo = await pool.query(
 			`
-				select * from tbl_nguoi_dung,tbl_nhan_vien where tbl_nhan_vien.nhan_vien_id = tbl_nguoi_dung.nhan_vien_id and ten_dang_nhap = N'${TaiKhoan}' and mat_khau = N'${mahoa.Encrypt_LOOP_3DES(MatKhau,TaiKhoan,1)}'
+				select * from tbl_nguoi_dung,tbl_nhan_vien where 
+				tbl_nhan_vien.nhan_vien_id = tbl_nguoi_dung.nhan_vien_id and ten_dang_nhap = N'${TaiKhoan}' and mat_khau = N'${mahoa.Encrypt_LOOP_3DES(MatKhau,TaiKhoan,1)}'
 			`
 		);
 		// res.send('<h3>a</h3>')

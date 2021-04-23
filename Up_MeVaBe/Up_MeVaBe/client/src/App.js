@@ -43,7 +43,9 @@ function App() {
       <Header onTab={onTab}></Header>
       {/* Slider */}
       <Main Tab={Tab}></Main>
+      
       <Footer></Footer>
+
       <ThanhMeunuMobile onTab={onTab}></ThanhMeunuMobile>
     </React.Fragment>
   );
